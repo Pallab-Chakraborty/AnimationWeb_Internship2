@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Character Showcase</title>
+  <meta name="description" content="A cinematic character showcase slider — Marvel heroes and Hindu deities in one interactive carousel." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<canvas id="stars-canvas"></canvas>
+
+<div class="bg-hero" id="bg-hero"></div>
+
+<div class="showcase">
+  <div class="card-stage" id="card-stage">
+
+    <!-- Auto-play ring -->
+    <div class="autoplay-ring" id="autoplay-ring" title="Toggle autoplay">
+      <svg viewBox="0 0 44 44" width="44" height="44">
+        <circle class="track" cx="22" cy="22" r="18"/>
+        <circle class="fill" id="progress-circle" cx="22" cy="22" r="18"/>
+      </svg>
+      <div class="play-icon" id="play-icon"><i class="fa-solid fa-play"></i></div>
+    </div>
+
+    <!-- Counter -->
+    <div class="counter">
+      <span id="counter-cur">1</span> / <span id="counter-total">6</span>
+    </div>
+
+    <!-- Slide track -->
+    <div class="slide-track" id="slide-track">
+      <!-- Items injected by JS -->
+    </div>
+
+    <!-- Dots -->
+    <div class="dots" id="dots"></div>
+
+    <!-- Nav buttons -->
+    <div class="nav-btns">
+      <button class="nav-btn" id="btn-prev" title="Previous (←)">
+        <i class="fa-solid fa-arrow-left"></i>
+      </button>
+      <button class="nav-btn" id="btn-next" title="Next (→)">
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+
+    <!-- Keyboard hint -->
+    <div class="kbd-hint">
+      <span class="kbd">←</span> navigate <span class="kbd">→</span>
+      &nbsp;·&nbsp;
+      <span class="kbd" style="width:auto;padding:0 5px">Space</span> autoplay
+      &nbsp;·&nbsp;
+      <span class="kbd" style="width:auto;padding:0 5px">Enter</span> details
+    </div>
+
+    <!-- Swipe hint (mobile) -->
+    <div class="swipe-hint">Swipe to navigate</div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal" id="modal">
+    <div class="modal-img" id="modal-img"></div>
+    <div class="modal-body">
+      <div class="modal-badge" id="modal-badge"></div>
+      <div class="modal-name" id="modal-name"></div>
+      <div class="modal-tagline" id="modal-tagline"></div>
+      <div class="modal-divider"></div>
+      <p class="modal-desc" id="modal-desc"></p>
+      <div class="modal-section-title">Signature Abilities</div>
+      <div class="modal-abilities" id="modal-abilities"></div>
+      <div class="modal-section-title">Power Stats</div>
+      <div class="modal-stats" id="modal-stats"></div>
+    </div>
+    <button class="modal-close" id="modal-close">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+</div>
+
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
